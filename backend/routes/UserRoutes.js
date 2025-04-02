@@ -50,13 +50,13 @@ userRouter.post(
 
 //create User
 userRouter.post(
-  "/",
+  "/register",
   AsyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
     const existUser = await User.findOne({ email });
     if (existUser) {
-      res.status(400);
-      throw new Error("User already exist");
+      res.status(400).json({ message: "User already exists" });
+      return;
     }
     const user = await User.create({
       name,

@@ -2,25 +2,25 @@ require("dotenv").config();
 const express = require("express");
 const mongoDBconnexion = require("./db-connexion/connectToDb");
 const databaseSeeder = require("./databaseSeeder");
-const userRoute = require("./routes/UserRoutes");
+const userRouter = require("./routes/UserRoutes");
 const productRouter = require("./routes/productRoutes");
 const orderRouter = require("./routes/OrderRoutes");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware pour parser les requêtes JSON
 app.use(express.json());
 
 // Middleware pour permettre les requêtes CORS
 app.use(cors());
-
+//{ origin: "http://localhost:5173", credentials: true }
 // Routes pour initialiser la base de données
 app.use("/api/seed", databaseSeeder);
 
 // Routes pour les utilisateurs
-app.use("/api/users", userRoute);
+app.use("/api/users", userRouter);
 
 // Routes pour les produits
 app.use("/api/products", productRouter);
