@@ -13,6 +13,10 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const qty = useSelector((state) =>
+    state.cartReducer.cartItems.reduce((acc, item) => acc + item.qty, 0)
+  );
+
   const logoutHandler = () => {
     dispatch(userLogoutAction());
     navigate("/login", { replace: true }); // Redirection fluide
@@ -35,9 +39,10 @@ const NavBar = () => {
 
       {/* User Actions */}
       <div className="hidden md:flex items-center gap-4">
-        <Link to="/cart" className="hover:text-yellow-500 flex items-center">
-          <ShoppingCart className="w-5 h-5 mr-1" /> Cart
-        </Link>
+        <button className="hover:text-yellow-500 flex items-center">
+          <ShoppingCart className="w-5 h-5 mr-1" />
+          <span>{qty}</span>
+        </button>
         {!userInfo ? (
           <Link
             to="/register"
@@ -62,9 +67,10 @@ const NavBar = () => {
             Home
           </Link>
 
-          <Link to="/cart" className="hover:text-yellow-500 flex items-center">
-            <ShoppingCart className="w-5 h-5 mr-1" /> Cart
-          </Link>
+          <button className="hover:text-yellow-500 flex items-center">
+            <ShoppingCart className="w-5 h-5 mr-1" />
+            <span>{qty}</span>
+          </button>
           {!userInfo ? (
             <Link
               to="/register"
