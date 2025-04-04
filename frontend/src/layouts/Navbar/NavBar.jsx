@@ -26,7 +26,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed w-full flex items-center justify-between p-4 bg-slate-200 shadow-md">
+    <header className="fixed w-full z-50 flex items-center justify-between p-4 bg-slate-200 shadow-md">
       {/* Logo */}
       <h1 className="text-3xl font-bold">
         <span className="text-yellow-500">E</span>-

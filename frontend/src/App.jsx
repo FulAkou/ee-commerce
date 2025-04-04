@@ -9,6 +9,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
+import PlaceOrder from "./pages/PlaceOrder";
 import ProductDetail from "./pages/ProductDetail";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
             element={userInfo ? <Navigate to="/"></Navigate> : <Register />}
           />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/placeorder" element={<PlaceOrder />} />
         </Routes>
       </Router>
     </>
