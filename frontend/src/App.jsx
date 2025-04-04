@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 
@@ -28,6 +29,7 @@ const App = () => {
             path="/register"
             element={userInfo ? <Navigate to="/"></Navigate> : <Register />}
           />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
     </>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import UserDropdown from "../../components/Dropdown/Dropdown";
+import Checkout from "../../pages/Checkout";
 import { userLogoutAction } from "../../Redux/Actions/User";
 
 const NavBar = () => {
@@ -22,6 +23,8 @@ const NavBar = () => {
     navigate("/login", { replace: true }); // Redirection fluide
   };
 
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="fixed w-full flex items-center justify-between p-4 bg-slate-200 shadow-md">
       {/* Logo */}
@@ -39,10 +42,14 @@ const NavBar = () => {
 
       {/* User Actions */}
       <div className="hidden md:flex items-center gap-4">
-        <button className="hover:text-yellow-500 flex items-center">
+        <button
+          className="hover:text-yellow-500 flex items-center"
+          onClick={() => setOpen(true)}
+        >
           <ShoppingCart className="w-5 h-5 mr-1" />
           <span>{qty}</span>
         </button>
+        <Checkout open={open} setOpen={setOpen} />
         {!userInfo ? (
           <Link
             to="/register"
