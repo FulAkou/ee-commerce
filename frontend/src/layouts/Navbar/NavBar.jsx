@@ -26,12 +26,14 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed w-full z-50 flex items-center justify-between p-4 bg-slate-200 shadow-md">
+    <header className="fixed w-full z-50 flex items-center justify-between p-4 bg-yellow-300 shadow-md">
       {/* Logo */}
-      <h1 className="text-3xl font-bold">
-        <span className="text-yellow-500">E</span>-
-        <span className="text-yellow-500">C</span>ommerce
-      </h1>
+      <Link to={"/"}>
+        <h1 className="text-3xl font-bold ml-5 hover:text-yellow-500">
+          <span className="text-yellow-500">E</span>-
+          <span className="text-yellow-500">C</span>ommerce
+        </h1>
+      </Link>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-6">
@@ -72,6 +74,9 @@ const NavBar = () => {
         <div className="absolute top-16 left-0 w-full bg-slate-200 p-4 flex flex-col items-center gap-4 md:hidden">
           <Link to="/" className="hover:text-yellow-500">
             Home
+          </Link>
+          <Link to="/about" className="hover:text-yellow-500">
+            About
           </Link>
 
           <button className="hover:text-yellow-500 flex items-center">

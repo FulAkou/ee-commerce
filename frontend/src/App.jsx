@@ -9,6 +9,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
+import OrderHistory from "./pages/OrderHistory";
 import PlaceOrder from "./pages/PlaceOrder";
 import ProductDetail from "./pages/ProductDetail";
 
@@ -32,6 +33,7 @@ const App = () => {
           />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/order-history" element={<OrderHistory />} />
         </Routes>
       </Router>
     </>

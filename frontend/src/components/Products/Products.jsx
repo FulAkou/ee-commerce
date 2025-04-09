@@ -45,11 +45,13 @@ const Products = () => {
                   key={product._id}
                   className="border rounded-lg overflow-hidden shadow-md"
                 >
-                  <img
-                    className="h-48 w-full object-cover"
-                    src={product.image}
-                    alt={product.name || "Produit"}
-                  />
+                  <Link to={`/products/${product._id}`}>
+                    <img
+                      className="h-48 w-full object-cover"
+                      src={product.image}
+                      alt={product.name || "Produit"}
+                    />
+                  </Link>
                   <div className="p-4">
                     <Link
                       to={`/products/${product._id}`}
@@ -57,14 +59,13 @@ const Products = () => {
                     >
                       <h3 className="text-lg font-semibold">{product.name}</h3>
                     </Link>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-gray-700 mb-2">
                       {product.description}
                     </p>
-                    <p className="text-lg font-semibold">${product.price}</p>
-                    <p>Review Count: {product.numReviews}</p>
-                    <button className="flex justify-center mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+                    <p className="text-lg font-semibold ">${product.price}</p>
+                    {/* <button className="flex justify-center mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
                       Ajouter au panier
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               ))
@@ -137,7 +138,7 @@ const Products = () => {
               className={`px-4 py-2 border rounded ${
                 page <= 1
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-blue-500 text-white hover:bg-blue-600"
+                  : "bg-yellow-500 text-white hover:bg-yellow-600"
               }`}
             >
               Précédent
@@ -153,7 +154,7 @@ const Products = () => {
               className={`px-4 py-2 border rounded ${
                 page >= totalPages
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-blue-500 text-white hover:bg-blue-600"
+                  : "bg-yellow-500 text-white hover:bg-yellow-600"
               }`}
             >
               Suivant

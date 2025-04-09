@@ -3,11 +3,17 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="dark:bg-gray-100 dark:text-gray-900">
+      <footer className="bg-yellow-300">
         <div className="w-full flex flex-col p-4 mx-auto md:p-8 lg:flex-row dark:bg-slate-200">
           <ul className="self-center py-6 space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-            <li>E-Commerce</li>
+            <li className="cursor-pointer font-bold text-gray-900 text-xl hover:text-yellow-700">
+              <h1 className="text-3xl font-bold ml-5 hover:text-yellow-500">
+                <span className="text-yellow-500">E</span>-
+                <span className="text-yellow-500">C</span>ommerce
+              </h1>
+            </li>
           </ul>
+
           <div className="flex flex-col justify-center pt-6 lg:pt-0">
             <div className="flex justify-center space-x-4">
               <a

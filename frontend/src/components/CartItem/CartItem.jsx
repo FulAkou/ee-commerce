@@ -77,7 +77,7 @@ const CartItem = ({ cartItems }) => {
                     <div className="flex">
                       <button
                         type="button"
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-yellow-600 hover:text-yellow-500"
                         onClick={() => removeFromCartHandler(product.product)}
                       >
                         Remove

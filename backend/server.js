@@ -15,7 +15,6 @@ app.use(express.json());
 
 // Middleware pour permettre les requêtes CORS
 app.use(cors());
-//{ origin: "http://localhost:5173", credentials: true }
 // Routes pour initialiser la base de données
 app.use("/api/seed", databaseSeeder);
 
@@ -27,6 +26,11 @@ app.use("/api/products", productRouter);
 
 // Routes pour les commandes
 app.use("/api/orders", orderRouter);
+
+// paypal payment route for frontend to process payment
+app.use("/api/config/paypal", (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID);
+});
 
 // Connexion à la base de données
 mongoDBconnexion();

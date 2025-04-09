@@ -50,7 +50,7 @@ export default function Checkout({ open, setOpen }) {
                       <button
                         type="button"
                         onClick={() => setOpen(false)}
-                        className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
+                        className="relative -m-2 p-2 text-gray-400 hover:text-gray-500  "
                       >
                         <span className="absolute -inset-0.5" />
                         <span className="sr-only">Close panel</span>
@@ -64,7 +64,9 @@ export default function Checkout({ open, setOpen }) {
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
+                    <p className="text-base font-medium text-gray-900">
+                      Subtotal
+                    </p>
                     <p>$ {calculateTotalPrice()}</p>
                   </div>
                   <p className="mt-0.5 text-sm text-gray-500">
@@ -73,7 +75,7 @@ export default function Checkout({ open, setOpen }) {
                   <div className="mt-6">
                     <Link
                       to="/placeorder" // Redirect to the place order page
-                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-yellow-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-yellow-700"
                     >
                       Checkout
                     </Link>
@@ -84,7 +86,7 @@ export default function Checkout({ open, setOpen }) {
                       <button
                         type="button"
                         onClick={() => setOpen(false)}
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-yellow-600 hover:text-yellow-500"
                       >
                         Continue Shopping
                         <span aria-hidden="true"> &rarr;</span>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate de react-router-dom
+import { Link, useNavigate } from "react-router-dom"; // Importer useNavigate de react-router-dom
 import Layout from "../../layouts/Layout";
 import { userLoginAction } from "../../Redux/Actions/User";
 
@@ -80,7 +80,7 @@ const Login = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full p-3 text-center font-semibold rounded-md bg-violet-600 text-white hover:bg-violet-700 focus:ring focus:ring-violet-400"
+                    className="w-full p-3 text-center font-semibold rounded-md bg-yellow-600 text-white hover:bg-yellow-700 focus:ring focus:ring-yellow-400"
                   >
                     Sign in
                   </button>
@@ -89,10 +89,13 @@ const Login = () => {
             )}
             <p className="text-xs text-center dark:text-gray-400">
               Don't have an account?
-              <a href="#" className="text-violet-600 hover:underline">
+              <Link
+                to={"/register"}
+                className="text-yellow-600 hover:underline"
+              >
                 {" "}
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
         </div>
