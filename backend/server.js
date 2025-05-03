@@ -22,7 +22,7 @@ app.use("/api/seed", databaseSeeder);
 app.use("/api/users", userRouter);
 
 // Routes pour les produits
-app.use("/api/products", productRouter);
+app.use("/api/", productRouter);
 
 // Routes pour les commandes
 app.use("/api/orders", orderRouter);
