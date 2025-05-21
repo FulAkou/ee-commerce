@@ -24,7 +24,28 @@ const Products = () => {
 
       {loading ? (
         <div className="flex justify-center items-center h-64">
-          <span className="text-lg font-semibold">Chargement...</span>
+          <span className="text-lg font-semibold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 2v4" />
+              <path d="m16.2 7.8 2.9-2.9" />
+              <path d="M18 12h4" />
+              <path d="m16.2 16.2 2.9 2.9" />
+              <path d="M12 18v4" />
+              <path d="m4.9 19.1 2.9-2.9" />
+              <path d="M2 12h4" />
+              <path d="m4.9 4.9 2.9 2.9" />
+            </svg>
+          </span>
         </div>
       ) : error ? (
         <div className="text-center text-red-500 font-semibold">

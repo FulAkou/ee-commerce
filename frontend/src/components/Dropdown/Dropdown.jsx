@@ -11,7 +11,7 @@ const UserDropdown = ({ logoutHandler }) => {
     <div className="relative inline-block text-left">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition"
+        className="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-lg shadow-md hover:bg-yellow-700 transition"
       >
         User
         <ChevronDown size={18} />
